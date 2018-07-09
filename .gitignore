@@ -1,3 +1,9 @@
 # IntelliJ Idea
 .idea
 *.iml
+
+# NPM modules
+node_modules
+
+# out/ folder
+out
