@@ -1,0 +1,30 @@
+---
+title: "Index"
+---
+
+<% a = 5 %>
+<%= a %>
+======
+
+<%
+allBooks = @getCollection("html").findAll().toJSON()
+genreToBooks = {}
+for book in allBooks:
+    genre = book.genre
+
+    if genreToBooks.get(genre) == null genreToBooks.put(genre, [])
+    genreToBooks.get(genre).put(book)
+
+end
+
+for genre in genreToBooks.keys:
+%>
+
+## <%= genre %>
+
+<% for book in genreToBooks[genre] %>:
+[<%=book.title%> di <%=book.author%>](<%=book.url%>)
+<% end %>
+
+
+<% end %>

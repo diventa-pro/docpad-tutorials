@@ -1,0 +1,20 @@
+<% a="hello" %>
+<% b="callo" %>
+<% allBooks = @getCollection("html").findAll().toJSON() %>
+<#process.stdout.write("************************************************ ") %>
+<# console.log("===============================================") %>
+<% genreToBooks = {} %>
+<% console.log(genreToBooks) %>
+<% for book in allBooks: %>
+    <% genre = book.genre %>
+    <# console.log(genreToBooks[genre]) %>
+    <% if not genreToBooks[genre] : %>
+        <% genreToBooks[genre] = [] %>
+    <% end %>
+    <%  genreToBooks[genre].push(book) %>
+<% end %>
+<html>
+    <body>
+        <%= a %> <%= b %>
+    </body>
+</html>
